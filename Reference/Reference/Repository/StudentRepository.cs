@@ -3,6 +3,7 @@ using System.Linq;
 using Reference.Models;
 
 
+
 namespace SampleMvc.Repository
 {
     public class UserRepository 
@@ -11,6 +12,7 @@ namespace SampleMvc.Repository
 
         public Student GetUser(string studentId)
         {
+           
             return Database.Students.Where(student => student.StudentId == studentId).FirstOrDefault();
         }
 

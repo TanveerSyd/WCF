@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using Reference.Repository;
 
 namespace RefWCF
 {
@@ -12,31 +13,31 @@ namespace RefWCF
     public interface IStudentService
     {
         [OperationContract]
-        Student GetStudentById(int value);
+       Reference.Repository.Student GetStudentById(int value);
 
         
         // TODO: Add your service operations here
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+    //[DataContract]
+    //public class CompositeType
+    //{
+    //    bool boolValue = true;
+    //    string stringValue = "Hello ";
 
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
+    //    [DataMember]
+    //    public bool BoolValue
+    //    {
+    //        get { return boolValue; }
+    //        set { boolValue = value; }
+    //    }
 
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
-    }
+    //    [DataMember]
+    //    public string StringValue
+    //    {
+    //        get { return stringValue; }
+    //        set { stringValue = value; }
+    //    }
+    //}
 }

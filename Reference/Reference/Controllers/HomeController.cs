@@ -24,11 +24,24 @@ namespace Reference.Controllers
             return View(viewModel);
         }
         [HttpPost]
-        public PartialViewResult Index(StudentViewModel vm)
+        public PartialViewResult Index(StudentViewModel vm, string Action)
         {
             TestEntities context = new TestEntities();
-            context.Students.Add(vm.newStudent);
-            context.SaveChanges();
+            if (Action == "Add Student")
+            {
+               
+                context.Students.Add(vm.newStudent);
+                context.SaveChanges();
+            }
+            else
+            {
+                foreach( Student s in context.Students)
+                {
+                    s.Age += 1;
+                    
+                }
+                context.SaveChanges();
+            }
 
             return PartialView("_StudentListControl",context.Students);
         }

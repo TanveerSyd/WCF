@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using RefWCFService;
+using Reference.Repository;
 
 namespace MvcApplication1.Controllers
 {
@@ -24,7 +24,7 @@ namespace MvcApplication1.Controllers
         public ActionResult GetStudent()
         {
             StudentServiceClient client = new StudentServiceClient();
-            Student student = client.GetStudentById(1);
+            Student student = client.GetStudentById(17);
             return View();
         }
     }
