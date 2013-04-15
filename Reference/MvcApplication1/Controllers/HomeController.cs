@@ -24,7 +24,7 @@ namespace MvcApplication1.Controllers
         public ActionResult GetStudent()
         {
             StudentServiceClient client = new StudentServiceClient();
-            Student student = client.GetStudentById(17);
+            Student student = client.GetStudent(Convert.ToString(17));
             return View();
         }
     }
